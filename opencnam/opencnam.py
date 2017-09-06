@@ -18,7 +18,7 @@ class Phone(object):
     :attr str api_user: Your API username.
     :attr str api_key: Your API key.
     """
-    OPENCNAM_API_URL = 'https://api.opencnam.com/v2/phone/%s'
+    OPENCNAM_API_URL = 'https://api.opencnam.com/v3/phone/%s'
 
     def __init__(self, number, cnam='', api_user=None, api_key=None,
             account_sid=None, auth_token=None):
@@ -54,7 +54,9 @@ class Phone(object):
 
         # Clean up ``number``, and try to build a valid phone number that
         # opencnam can use.
+        """
         self.clean()
+        """
 
         # Attempt to grab the caller ID name information from opencnam. If we
         # can't get a caller ID response back, we won't retry (developers can
